@@ -1,0 +1,25 @@
+
+
+Junior Connect — Share & Grow * { box-sizing: border-box; } body { margin: 0; font-family: Arial, sans-serif; background: #0b1220; color: #f8fafc; } header { background: #111c30; padding: 20px; text-align: center; border-bottom: 1px solid #26354d; } header h1 { color: #38bdf8; margin: 0; } header p { color: #cbd5e1; } main { max-width: 650px; margin: 25px auto; padding: 16px; } .card { background: #142035; border: 1px solid #26354d; border-radius: 14px; padding: 20px; margin-bottom: 18px; } input, textarea, button { width: 100%; padding: 12px; margin: 7px 0; border-radius: 8px; font-size: 16px; } input, textarea { background: #0b1220; border: 1px solid #34445e; color: white; } button { background: #0284c7; color: white; border: none; font-weight: bold; cursor: pointer; } .muted { color: #aab8cc; font-size: 14px; } #feed article { background: #0b1220; padding: 13px; border-radius: 8px; margin-top: 12px; overflow-wrap: anywhere; } footer { text-align: center; color: #94a3b8; padding: 20px; } 
+Junior Connect
+Share • Grow • Connect
+
+Welcome to Junior Connect
+Good things happen when we connect.
+A community for sharing ideas, connecting with people and growing together.
+
+<section class="card">
+  <h2>Create a post</h2>
+  <input id="author" placeholder="Your display name">
+  <textarea id="message" rows="4" placeholder="What would you like to share?"></textarea>
+  <button onclick="publishPost()">Share post</button>
+  <p class="muted">Demo mode: posts are saved only in this browser.</p>
+</section>
+
+<section class="card">
+  <h2>Community feed</h2>
+  <div id="feed"><p class="muted">Be the first to share something!</p></div>
+</section>
+
+© 2026 Junior Connect — Share & Grow
+function publishPost() { const author = document.getElementById('author').value.trim(); const message = document.getElementById('message').value.trim(); if (!author || !message) { alert('Please enter your name and a message.'); return; } const feed = document.getElementById('feed'); if (feed.querySelector('.muted')) feed.innerHTML = ''; const post = document.createElement('article'); const name = document.createElement('strong'); const content = document.createElement('p'); name.textContent = author; content.textContent = message; post.append(name, content); feed.prepend(post); document.getElementById('message').value = ''; } 
