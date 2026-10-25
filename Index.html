@@ -1,25 +1,120 @@
+HTML
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>Junior Connect — Share & Grow</title>
+  <meta name="description" content="Connect with people, share ideas, and grow together with Junior Connect.">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./scripts.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a href="#home" class="brand">
+      <span class="brand-icon">JC</span>
+      <span>Junior Connect</span>
+    </a>
+    <button id="menuBtn" class="menu-btn" aria-label="Open navigation">☰</button>
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#community">Community</a>
+      <a href="#join" class="nav-join">Get Started</a>
+    </nav>
+  </header>
 
-Junior Connect — Share & Grow * { box-sizing: border-box; } body { margin: 0; font-family: Arial, sans-serif; background: #0b1220; color: #f8fafc; } header { background: #111c30; padding: 20px; text-align: center; border-bottom: 1px solid #26354d; } header h1 { color: #38bdf8; margin: 0; } header p { color: #cbd5e1; } main { max-width: 650px; margin: 25px auto; padding: 16px; } .card { background: #142035; border: 1px solid #26354d; border-radius: 14px; padding: 20px; margin-bottom: 18px; } input, textarea, button { width: 100%; padding: 12px; margin: 7px 0; border-radius: 8px; font-size: 16px; } input, textarea { background: #0b1220; border: 1px solid #34445e; color: white; } button { background: #0284c7; color: white; border: none; font-weight: bold; cursor: pointer; } .muted { color: #aab8cc; font-size: 14px; } #feed article { background: #0b1220; padding: 13px; border-radius: 8px; margin-top: 12px; overflow-wrap: anywhere; } footer { text-align: center; color: #94a3b8; padding: 20px; } 
-Junior Connect
-Share • Grow • Connect
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">CONNECT • SHARE • GROW</span>
+        <h1>Good things happen when <span>we connect.</span></h1>
+        <p>Meet people, exchange ideas, discover opportunities and build something meaningful together.</p>
+        <div class="hero-actions">
+          <a href="#join" class="btn primary">Join the Community ↗</a>
+          <a href="#about" class="btn secondary">Discover More</a>
+        </div>
+        <div class="trust-line">One community. Endless possibilities.</div>
+      </div>
+      <div class="hero-card">
+        <div class="orb">JC</div>
+        <span class="online-dot"></span>
+        <h2>Your next connection starts here.</h2>
+        <p>Share your ideas. Learn new skills. Explore opportunities.</p>
+        <div class="mini-tags"><span>Ideas</span><span>People</span><span>Growth</span></div>
+      </div>
+    </section>
 
-Welcome to Junior Connect
-Good things happen when we connect.
-A community for sharing ideas, connecting with people and growing together.
+    <section id="about" class="section">
+      <span class="eyebrow">OUR PURPOSE</span>
+      <h2>A place to connect and move forward.</h2>
+      <p class="section-intro">Junior Connect is designed to bring people together through communication, collaboration and opportunities to grow.</p>
+    </section>
 
-<section class="card">
-  <h2>Create a post</h2>
-  <input id="author" placeholder="Your display name">
-  <textarea id="message" rows="4" placeholder="What would you like to share?"></textarea>
-  <button onclick="publishPost()">Share post</button>
-  <p class="muted">Demo mode: posts are saved only in this browser.</p>
-</section>
+    <section id="features" class="section features">
+      <span class="eyebrow">WHAT YOU CAN EXPLORE</span>
+      <h2>More than just a connection.</h2>
+      <div class="feature-grid">
+        <article class="feature">
+          <div class="feature-icon">💬</div>
+          <h3>Communication</h3>
+          <p>Discover ways to exchange ideas and keep conversations going.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">🤝</div>
+          <h3>Community</h3>
+          <p>Bring people together around shared interests and goals.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">🚀</div>
+          <h3>Opportunities</h3>
+          <p>Make room for learning, collaboration and business ideas.</p>
+        </article>
+      </div>
+    </section>
 
-<section class="card">
-  <h2>Community feed</h2>
-  <div id="feed"><p class="muted">Be the first to share something!</p></div>
-</section>
+    <section id="community" class="community">
+      <span class="eyebrow">SHARE • LEARN • BUILD</span>
+      <h2>Your ideas deserve a place to grow.</h2>
+      <p>Start with a connection. Keep building from there.</p>
+      <a href="#join" class="btn primary">Get Started ↗</a>
+    </section>
 
-© 2026 Junior Connect — Share & Grow
-function publishPost() { const author = document.getElementById('author').value.trim(); const message = document.getElementById('message').value.trim(); if (!author || !message) { alert('Please enter your name and a message.'); return; } const feed = document.getElementById('feed'); if (feed.querySelector('.muted')) feed.innerHTML = ''; const post = document.createElement('article'); const name = document.createElement('strong'); const content = document.createElement('p'); name.textContent = author; content.textContent = message; post.append(name, content); feed.prepend(post); document.getElementById('message').value = ''; } 
+    <section id="join" class="section join-section">
+      <span class="eyebrow">BE PART OF IT</span>
+      <h2>Welcome to Junior Connect.</h2>
+      <p class="section-intro">Choose an option to explore the community.</p>
+
+      <div class="join-panel">
+        <button id="showLogin" class="btn secondary" type="button">Log In</button>
+        <button id="showRegister" class="btn primary" type="button">Create Account</button>
+
+        <form id="accountForm" class="account-form" hidden>
+          <h3 id="formTitle">Create Account</h3>
+          <label for="fullName" id="nameLabel">Full name</label>
+          <input id="fullName" type="text" placeholder="Enter your name" autocomplete="name">
+
+          <label for="email">Email address</label>
+          <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Enter password" autocomplete="current-password" minlength="6" required>
+
+          <button class="btn primary full-width" type="submit" id="submitAccount">Continue</button>
+          <p id="formMessage" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <p class="small-note">Account creation and sign-in require a secure authentication service to be connected.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="brand"><span class="brand-icon">JC</span> Junior Connect</a>
+    <p>Share & Grow · Good things happen when we connect.</p>
+    <p class="copyright">© <span id="year"></span> Junior Connect</p>
+  </footer>
+</body>
+</html>
